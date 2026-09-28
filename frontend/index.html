@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DPI Security — Deep Packet Inspection Security Gateway</title>
+  <meta name="description" content="Professional Deep Packet Inspection & Security Gateway featuring real-time L3-L7 packet filtering, signature detection, TLS SNI inspection, and flow state tracking.">
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <span class="top-bar-announce">
+        <span class="arrow">➔</span> <strong>DePaul Security is now DPI Security.</strong> Give us a call at <a href="tel:5032811289">503.281.1289</a> or email <a href="mailto:info@dpisecurity.com">info@dpisecurity.com</a>
+      </span>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo">
+        <div class="logo-shield">
+          <svg viewBox="0 0 100 100" class="shield-svg">
+            <path d="M50 5 L90 20 V50 C90 75 50 95 50 95 C50 95 10 75 10 50 V20 Z" fill="#0b3c5d" stroke="#00d4ff" stroke-width="3"/>
+            <path d="M30 30 H55 C65 30 72 37 72 45 C72 53 65 60 55 60 H45 V75 H30 Z M45 42 V48 H53 C56 48 58 46 58 45 C58 44 56 42 53 42 Z" fill="#ffffff"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">DPI <span class="accent-text">SECURITY</span></span>
+          <span class="logo-sub">DEEP PACKET INSPECTION GATEWAY</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="main-nav">
+        <a href="#services" class="nav-link">SECURITY SERVICES</a>
+        <a href="#gateway" class="nav-link active">LIVE GATEWAY</a>
+        <a href="#features" class="nav-link">ENTERPRISE TOOLS</a>
+        <a href="#team" class="nav-link">ABOUT OUR TEAM</a>
+        <a href="#contact" class="nav-link">CONTACT</a>
+        <button class="search-btn" title="Search DPI Gateway" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section — Two-Column Enterprise Layout -->
+  <section class="hero-section">
+    <div class="hero-container hero-two-col">
+
+      <!-- LEFT: Text & CTA -->
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="hero-tag">🛡️ DPI SECURITY GATEWAY v2.0</span>
+        </div>
+        <h1 class="hero-title">Network Security<br>For the <span class="hero-title-accent">Modern Enterprise</span></h1>
+        <p class="hero-subtitle">High-performance C++ Deep Packet Inspection gateway — stateful L3-L7 flow inspection, real-time payload signature detection, TLS SNI filtering, and automated threat mitigation.</p>
+
+        <div class="hero-cta-row">
+          <a href="#gateway" class="btn-hero-primary">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Launch Live Console
+          </a>
+          <a href="#services" class="btn-hero-outline">Explore Services</a>
+        </div>
+
+        <!-- Three mini stat pills -->
+        <div class="hero-stat-pills">
+          <div class="stat-pill">
+            <span class="pill-val">L3-L7</span>
+            <span class="pill-label">Full Stack Inspection</span>
+          </div>
+          <div class="stat-pill">
+            <span class="pill-val">&lt;2ms</span>
+            <span class="pill-label">Avg Latency</span>
+          </div>
+          <div class="stat-pill">
+            <span class="pill-val">100%</span>
+            <span class="pill-label">Test Coverage</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Visual Network Animation Panel -->
+      <div class="hero-right">
+        <div class="hero-visual-card">
+          <div class="vis-header">
+            <span class="vis-dot vis-dot-green"></span>
+            <span class="vis-dot vis-dot-amber"></span>
+            <span class="vis-dot vis-dot-red"></span>
+            <span class="vis-title">DPI Engine — Live Status</span>
+          </div>
+          <div class="vis-body">
+            <!-- Animated packet flow diagram -->
+            <div class="packet-flow-anim">
+              <div class="flow-node flow-source">
+                <div class="fn-icon">💻</div>
+                <span>Client</span>
+              </div>
+              <div class="flow-arrow">
+                <div class="flow-pulse"></div>
+                <svg viewBox="0 0 80 16" width="80" height="16"><line x1="0" y1="8" x2="72" y2="8" stroke="#0b3c5d" stroke-width="2" stroke-dasharray="6,3"/><polygon points="72,4 80,8 72,12" fill="#0b3c5d"/></svg>
+              </div>
+              <div class="flow-node flow-dpi">
+                <div class="fn-icon">🔍</div>
+                <span>DPI Core</span>
+              </div>
+              <div class="flow-arrow">
+                <div class="flow-pulse flow-pulse-delay"></div>
+                <svg viewBox="0 0 80 16" width="80" height="16"><line x1="0" y1="8" x2="72" y2="8" stroke="#10b981" stroke-width="2" stroke-dasharray="6,3"/><polygon points="72,4 80,8 72,12" fill="#10b981"/></svg>
+              </div>
+              <div class="flow-node flow-dest">
+                <div class="fn-icon">🌐</div>
+                <span>Internet</span>
+              </div>
+            </div>
+
+            <!-- Live mini telemetry rows -->
+            <div class="vis-telemetry">
+              <div class="tele-row">
+                <span class="tele-label">Engine Status</span>
+                <span class="tele-val tele-ok">● OPERATIONAL</span>
+              </div>
+              <div class="tele-row">
+                <span class="tele-label">Active Flows</span>
+                <span class="tele-val" id="hero-flows">0</span>
+              </div>
+              <div class="tele-row">
+                <span class="tele-label">Packets Inspected</span>
+                <span class="tele-val" id="hero-total">0</span>
+              </div>
+              <div class="tele-row">
+                <span class="tele-label">Threats Blocked</span>
+                <span class="tele-val tele-danger" id="hero-block">0</span>
+              </div>
+              <div class="tele-row">
+                <span class="tele-label">Inspection Pipeline</span>
+                <span class="tele-val tele-ok">L3 → L4 → L7</span>
+              </div>
+            </div>
+
+            <!-- Feature highlights inside card -->
+            <div class="vis-features">
+              <div class="vis-feat">
+                <span class="vf-icon">⚡</span>
+                <span>Multithreaded C++ Core</span>
+              </div>
+              <div class="vis-feat">
+                <span class="vf-icon">🔒</span>
+                <span>TLS SNI Extractor</span>
+              </div>
+              <div class="vis-feat">
+                <span class="vf-icon">🎯</span>
+                <span>Dynamic Rule Engine</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Main DPI Security Gateway Workspace -->
+  <main id="gateway" class="gateway-workspace">
+    <div class="workspace-container">
+
+      <!-- Section Banner Header -->
+      <div class="console-banner">
+        <div class="console-banner-left">
+          <div class="console-status-dot"></div>
+          <div>
+            <h2 class="console-title">Deep Packet Inspection Security Console</h2>
+            <p class="console-sub">Simulate packets · Trigger threat vectors · Inspect real-time stateful verdicts</p>
+          </div>
+        </div>
+        <div class="console-banner-right">
+          <span class="console-live-badge">● LIVE</span>
+          <a href="http://localhost:8000/api/docs" target="_blank" class="btn-api-docs">API Docs ↗</a>
+        </div>
+      </div>
+
+      <!-- Telemetry Stats Cards Grid -->
+      <div class="stats-grid">
+        <div class="stat-card stat-card-blue">
+          <div class="stat-icon-wrap stat-blue">📊</div>
+          <div class="stat-value font-mono" id="stat-total">0</div>
+          <span class="stat-label">TOTAL PACKETS</span>
+          <span class="stat-sub">Inspected through engine</span>
+        </div>
+
+        <div class="stat-card stat-card-green">
+          <div class="stat-icon-wrap stat-green">🛡️</div>
+          <div class="stat-value font-mono text-green" id="stat-allow">0</div>
+          <span class="stat-label">ALLOWED</span>
+          <span class="stat-sub">Passed security rules</span>
+        </div>
+
+        <div class="stat-card stat-card-red">
+          <div class="stat-icon-wrap stat-red">🚫</div>
+          <div class="stat-value font-mono text-red" id="stat-block">0</div>
+          <span class="stat-label">BLOCKED</span>
+          <span class="stat-sub">Threats & rules dropped</span>
+        </div>
+
+        <div class="stat-card stat-card-amber">
+          <div class="stat-icon-wrap stat-amber">⚠️</div>
+          <div class="stat-value font-mono text-amber" id="stat-alert">0</div>
+          <span class="stat-label">ALERTS</span>
+          <span class="stat-sub">Suspicious signatures</span>
+        </div>
+
+        <div class="stat-card stat-card-purple">
+          <div class="stat-icon-wrap stat-purple">🔄</div>
+          <div class="stat-value font-mono text-purple" id="stat-flows">0</div>
+          <span class="stat-label">ACTIVE FLOWS</span>
+          <span class="stat-sub">5-Tuple connections</span>
+        </div>
+      </div>
+
+      <!-- Scenario Quick Launcher — Pill Buttons -->
+      <div class="scenario-launcher">
+        <div class="scenario-launcher-header">
+          <h3 class="scenario-launcher-title">⚡ Quick Test Scenarios</h3>
+          <span class="scenario-launcher-sub">Click any scenario to auto-fill and immediately inspect a predefined packet through the DPI engine</span>
+        </div>
+        <div class="scenario-pills">
+          <button class="scenario-pill pill-green" id="btn-normal">
+            <span class="pill-circle pill-c-green">✓</span>
+            <div class="pill-text">
+              <span class="pill-name">Clean HTTP Request</span>
+              <span class="pill-desc">Normal traffic → ALLOW</span>
+            </div>
+          </button>
+
+          <button class="scenario-pill pill-red" id="btn-malicious">
+            <span class="pill-circle pill-c-red">☣</span>
+            <div class="pill-text">
+              <span class="pill-name">Malicious Payload</span>
+              <span class="pill-desc">Signature match → BLOCK</span>
+            </div>
+          </button>
+
+          <button class="scenario-pill pill-blue" id="btn-sni">
+            <span class="pill-circle pill-c-blue">🔒</span>
+            <div class="pill-text">
+              <span class="pill-name">TLS SNI Block</span>
+              <span class="pill-desc">Forbidden domain → BLOCK</span>
+            </div>
+          </button>
+
+          <button class="scenario-pill pill-amber" id="btn-scan">
+            <span class="pill-circle pill-c-amber">⚑</span>
+            <div class="pill-text">
+              <span class="pill-name">Port Scan Alert</span>
+              <span class="pill-desc">Suspicious port → ALERT</span>
+            </div>
+          </button>
+
+          <button class="scenario-pill pill-purple" id="btn-custom-sig">
+            <span class="pill-circle pill-c-purple">▶</span>
+            <div class="pill-text">
+              <span class="pill-name">YouTube Protocol</span>
+              <span class="pill-desc">App classification → BLOCK</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Workbench Grid: Form + Live Verdict -->
+      <div class="workbench-grid">
+        
+        <!-- Packet Input Generator Form -->
+        <div class="card form-card">
+          <div class="card-header">
+            <h3 class="card-title">🎛️ Packet Simulation Generator</h3>
+            <span class="card-badge font-mono">Custom 5-Tuple</span>
+          </div>
+          <form id="packet-form" class="packet-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pkt-src-ip">SOURCE IP ADDRESS</label>
+                <input type="text" id="pkt-src-ip" class="input font-mono" value="192.168.1.10" required>
+              </div>
+              <div class="form-group">
+                <label for="pkt-dst-ip">DESTINATION IP ADDRESS</label>
+                <input type="text" id="pkt-dst-ip" class="input font-mono" value="10.0.0.20" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pkt-src-port">SRC PORT</label>
+                <input type="number" id="pkt-src-port" class="input font-mono" value="54321" min="1" max="65535" required>
+              </div>
+              <div class="form-group">
+                <label for="pkt-dst-port">DST PORT</label>
+                <input type="number" id="pkt-dst-port" class="input font-mono" value="443" min="1" max="65535" required>
+              </div>
+              <div class="form-group">
+                <label for="pkt-protocol">PROTOCOL</label>
+                <select id="pkt-protocol" class="input font-mono">
+                  <option value="TCP">TCP</option>
+                  <option value="UDP">UDP</option>
+                  <option value="ICMP">ICMP</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="pkt-sni">TLS SNI / DOMAIN HEADER (OPTIONAL)</label>
+              <input type="text" id="pkt-sni" class="input font-mono" placeholder="e.g. example.com or forbidden-site.com" value="example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="pkt-payload">RAW PAYLOAD CONTENT / SIGNATURE SCAN TARGET</label>
+              <textarea id="pkt-payload" class="input textarea font-mono" rows="3" placeholder="Enter string payload or hex packet data...">GET /index.html HTTP/1.1\r\nHost: example.com\r\nUser-Agent: Mozilla/5.0</textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-submit" id="btn-send">
+                <span class="btn-icon">🚀</span>
+                <span>INSPECT PACKET THROUGH DPI ENGINE</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Live Verdict Card & Pipeline Visualization -->
+        <div class="card verdict-card">
+          <div class="card-header">
+            <h3 class="card-title">🔍 Live DPI Engine Verdict</h3>
+            <span class="card-badge font-mono" id="verdict-timestamp">READY</span>
+          </div>
+
+          <!-- Verdict Output Banner -->
+          <div id="verdict-banner" class="verdict-banner banner-neutral">
+            <div class="verdict-header">
+              <span class="badge badge-lg" id="verdict-badge">WAITING</span>
+              <span class="verdict-action" id="verdict-action font-mono">AWAITING PACKET</span>
+            </div>
+            <h2 class="verdict-title" id="verdict-title">Ready for Packet Inspection</h2>
+            <p class="verdict-reason font-mono" id="verdict-reason">Select a scenario above or click 'Inspect Packet' to test the engine.</p>
+            
+            <div class="verdict-meta-grid">
+              <div class="meta-box">
+                <span class="meta-label">CLASSIFIED APP</span>
+                <span class="meta-val font-mono" id="verdict-app">Unknown</span>
+              </div>
+              <div class="meta-box">
+                <span class="meta-label">LATENCY</span>
+                <span class="meta-val font-mono" id="verdict-latency">0.00 ms</span>
+              </div>
+              <div class="meta-box col-span-2">
+                <span class="meta-label">FLOW KEY (5-TUPLE HASH)</span>
+                <span class="meta-val font-mono text-truncate" id="verdict-flow">--</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DPI Inspection Pipeline Animation Stepper -->
+          <div class="pipeline-wrap">
+            <h4 class="pipeline-title">INSPECTION PIPELINE EXECUTION STEPPER</h4>
+            <div class="pipeline-stepper">
+              <div class="pipe-step" id="pipe-input">
+                <div class="pipe-icon">📥</div>
+                <span class="pipe-name">Packet In</span>
+              </div>
+              <div class="pipe-line"></div>
+
+              <div class="pipe-step" id="pipe-parse">
+                <div class="pipe-icon">🧩</div>
+                <span class="pipe-name">L3/L4 Parse</span>
+              </div>
+              <div class="pipe-line"></div>
+
+              <div class="pipe-step" id="pipe-flow">
+                <div class="pipe-icon">🔄</div>
+                <span class="pipe-name">Flow Lookup</span>
+              </div>
+              <div class="pipe-line"></div>
+
+              <div class="pipe-step" id="pipe-sni">
+                <div class="pipe-icon">🌐</div>
+                <span class="pipe-name">SNI Extract</span>
+              </div>
+              <div class="pipe-line"></div>
+
+              <div class="pipe-step" id="pipe-payload">
+                <div class="pipe-icon">🔬</div>
+                <span class="pipe-name">Sig Scan</span>
+              </div>
+              <div class="pipe-line"></div>
+
+              <div class="pipe-step" id="pipe-rules">
+                <div class="pipe-icon">⚖️</div>
+                <span class="pipe-name">Rule Engine</span>
+              </div>
+              <div class="pipe-line"></div>
+
+              <div class="pipe-step" id="pipe-verdict">
+                <div class="pipe-icon">🎯</div>
+                <span class="pipe-name">Verdict</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Telemetry Tables: Inspection History, Active Flows & Rules -->
+      <div class="card tables-card">
+        <div class="card-header border-b">
+          <div class="tab-nav">
+            <button class="tab-btn active" data-tab="tab-history">📋 Live Inspection History</button>
+            <button class="tab-btn" data-tab="tab-flows">🔄 Active 5-Tuple Flows</button>
+            <button class="tab-btn" data-tab="tab-rules">⚙️ DPI Security Rules</button>
+          </div>
+          <div class="tab-actions">
+            <button class="btn btn-sm btn-outline" id="btn-clear-history">Clear History</button>
+            <a href="http://localhost:8000/export-pcap" download="dpi_telemetry.pcap" class="btn btn-sm btn-navy">Export PCAP</a>
+          </div>
+        </div>
+
+        <!-- Tab 1: Inspection History Table -->
+        <div id="tab-history" class="tab-content active">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>TIME</th>
+                  <th>SOURCE IP:PORT</th>
+                  <th>DEST IP:PORT</th>
+                  <th>PROTO</th>
+                  <th>SNI / DOMAIN</th>
+                  <th>APP TYPE</th>
+                  <th>VERDICT</th>
+                  <th>REASON CODE</th>
+                </tr>
+              </thead>
+              <tbody id="history-tbody">
+                <tr>
+                  <td colspan="8" class="text-center text-muted">No packets inspected yet. Click a scenario button to start live telemetry.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 2: Active Flows Table -->
+        <div id="tab-flows" class="tab-content hidden">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>FLOW KEY</th>
+                  <th>5-TUPLE</th>
+                  <th>STATE</th>
+                  <th>PACKETS</th>
+                  <th>BYTES</th>
+                  <th>DETECTED APP</th>
+                  <th>LAST SEEN</th>
+                </tr>
+              </thead>
+              <tbody id="flow-tbody">
+                <tr>
+                  <td colspan="7" class="text-center text-muted">No active TCP/UDP flows tracked in session table.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 3: Active Security Rules Manager -->
+        <div id="tab-rules" class="tab-content hidden">
+          <div class="rules-view" id="rules-container">
+            <div class="rule-block">
+              <h4 class="rule-title">🚫 BLOCKED SOURCE IP ADDRESSES</h4>
+              <div class="tags-wrap" id="rules-ips">
+                <span class="tag tag-red">192.168.1.50</span>
+                <span class="tag tag-red">10.0.0.66</span>
+              </div>
+            </div>
+
+            <div class="rule-block">
+              <h4 class="rule-title">🔒 BLOCKED SNI & DOMAIN WILDCARDS</h4>
+              <div class="tags-wrap" id="rules-domains">
+                <span class="tag tag-red">*.facebook.com</span>
+                <span class="tag tag-red">*.youtube.com</span>
+                <span class="tag tag-red">forbidden-site.com</span>
+                <span class="tag tag-red">malicious-test.example</span>
+              </div>
+            </div>
+
+            <div class="rule-block">
+              <h4 class="rule-title">⚠️ SUSPICIOUS / RESTRICTED PORTS</h4>
+              <div class="tags-wrap" id="rules-ports">
+                <span class="tag tag-amber">Port 4444 (Metasploit Default)</span>
+                <span class="tag tag-amber">Port 6667 (IRC Botnet)</span>
+                <span class="tag tag-amber">Port 31337 (BackOrifice)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Service Cards Section (Matches Screenshot 'EXPLORE OUR SERVICES', 'WE'RE HIRING!', 'GET IN TOUCH') -->
+  <section id="services" class="services-section">
+    <div class="services-container">
+      <div class="services-grid">
+        
+        <!-- Card 1 -->
+        <div class="service-card">
+          <div class="service-img-placeholder">
+            <div class="service-badge">SECURITY SERVICES</div>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">EXPLORE OUR SERVICES</h3>
+            <p class="service-text">DPI Security offers unarmed network security, inline packet inspection, L7 payload signature scanning, and multi-vector threat prevention for enterprise networks.</p>
+            <a href="#gateway" class="service-link">Discover Our Services ➔</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="service-card">
+          <div class="service-img-placeholder placeholder-grey">
+            <div class="service-badge">ENGINEERING ROLES</div>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">WE'RE HIRING!</h3>
+            <p class="service-text">We're always looking for motivated systems programmers, C++ networking engineers, and cybersecurity analysts for high-performance security infrastructure.</p>
+            <a href="#team" class="service-link">Learn More and Apply ➔</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-card">
+          <div class="service-img-placeholder placeholder-blue">
+            <div class="service-badge">CONTACT US</div>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">GET IN TOUCH</h3>
+            <p class="service-text">Whether you want a technical consultation, custom rule engine integration, or wish to test your pcap traffic files, we'd love to hear from you.</p>
+            <a href="#contact" class="service-link">Contact Us ➔</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Yellow CTA Banner (Matches Screenshot "We're here to talk about your security needs.") -->
+  <section class="cta-banner">
+    <div class="cta-container">
+      <h2 class="cta-heading">We're here to talk about your security needs.</h2>
+      <a href="#contact" class="btn btn-cta">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        <span>CONTACT US TODAY</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Team Members Section (Placed Just Before Footer as Explicitly Requested) -->
+  <section id="team" class="team-section">
+    <div class="team-container">
+      
+      <div class="section-title-wrap text-center">
+        <span class="section-tag font-mono">CORE ENGINEERING TEAM</span>
+        <h2 class="section-title">Project Leadership & Systems Architects</h2>
+        <p class="section-lead">The engineers responsible for designing, building, and verifying the Deep Packet Inspection Security Gateway.</p>
+      </div>
+
+      <div class="team-grid">
+        
+        <!-- Team Member 1: Sushant Didwagh -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img src="images/sushant.jpg" alt="Sushant Didwagh" class="team-photo" onerror="this.src='https://ui-avatars.com/api/?name=Sushant+Didwagh&background=0b3c5d&color=fff&size=200'">
+            <div class="photo-overlay"></div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Sushant Didwagh</h3>
+            <span class="team-role">Lead Security Architect & Systems Developer</span>
+            <div class="team-badges">
+              <span class="team-badge">C++ Engine</span>
+              <span class="team-badge">Flow State Tracker</span>
+              <span class="team-badge">Multithreading</span>
+            </div>
+            <p class="team-bio">Architected the core multithreaded C++ DPI packet processing pipeline, 5-tuple connection state tracker, and high-performance packet dispatch logic.</p>
+          </div>
+        </div>
+
+        <!-- Team Member 2: Joel Emmanuel -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img src="images/joel.jpg" alt="Joel Emmanuel" class="team-photo" onerror="this.src='https://ui-avatars.com/api/?name=Joel+Emmanuel&background=0b3c5d&color=fff&size=200'">
+            <div class="photo-overlay"></div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Joel Emmanuel</h3>
+            <span class="team-role">Network Infrastructure & DPI Engineer</span>
+            <div class="team-badges">
+              <span class="team-badge">L7 Signature Scan</span>
+              <span class="team-badge">SNI Extractor</span>
+              <span class="team-badge">Rule Engine</span>
+            </div>
+            <p class="team-bio">Engineered the L7 payload pattern scanner, TLS ClientHello SNI extractor, suspicious port detection matrix, and dynamic filtering rule manager.</p>
+          </div>
+        </div>
+
+        <!-- Team Member 3: SHASHWATI PAWAR -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img src="images/shashwati.jpg" alt="SHASHWATI PAWAR" class="team-photo" onerror="this.src='https://ui-avatars.com/api/?name=Shashwati+Pawar&background=0b3c5d&color=fff&size=200'">
+            <div class="photo-overlay"></div>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">SHASHWATI PAWAR</h3>
+            <span class="team-role">Frontend & Security UI Engineer</span>
+            <div class="team-badges">
+              <span class="team-badge">FastAPI Integration</span>
+              <span class="team-badge">Security UI</span>
+              <span class="team-badge">Telemetry Visualizer</span>
+            </div>
+            <p class="team-bio">Built the real-time Security Gateway web dashboard, REST API endpoints, live traffic telemetry stepper, and pcap export functionality.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Main Site Corporate Footer (Matches Screenshot Design) -->
+  <footer id="contact" class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Brand Column -->
+        <div class="footer-col brand-col">
+          <div class="footer-logo">
+            <div class="logo-shield">
+              <svg viewBox="0 0 100 100" class="shield-svg">
+                <path d="M50 5 L90 20 V50 C90 75 50 95 50 95 C50 95 10 75 10 50 V20 Z" fill="#ffffff"/>
+                <path d="M30 30 H55 C65 30 72 37 72 45 C72 53 65 60 55 60 H45 V75 H30 Z M45 42 V48 H53 C56 48 58 46 58 45 C58 44 56 42 53 42 Z" fill="#0b3c5d"/>
+              </svg>
+            </div>
+            <span class="footer-logo-title">DPI SECURITY</span>
+          </div>
+          <a href="#" class="privacy-link">Privacy Policy</a>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="footer-col contact-col">
+          <h4 class="footer-heading">GET IN TOUCH</h4>
+          <ul class="contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>(503) 281-1289</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:info@dpisecurity.com">info@dpisecurity.com</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <a href="https://dpisecurity.com" target="_blank" rel="noopener">https://dpisecurity.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Offices Column -->
+        <div class="footer-col offices-col">
+          <h4 class="footer-heading">CONTACT YOUR LOCAL OFFICE</h4>
+          <ul class="office-list">
+            <li>Portland</li>
+            <li>Salem</li>
+            <li>Eugene</li>
+            <li>Florida</li>
+            <li>Pennsylvania</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <span class="copyright">© 2026 — DPI Security Gateway. All Rights Reserved.</span>
+        <button class="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Scroll to top">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
