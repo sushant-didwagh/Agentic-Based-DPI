@@ -1613,3 +1613,153 @@ a:hover {
   border: 1px solid #e2e8f0;
 }
 
+/* ─────────────────────────────────────────────────────────────
+ * Agentic AI Orchestrator & Multi-Agent Telemetry Styles
+ * ───────────────────────────────────────────────────────────── */
+.agentic-card {
+  margin-bottom: 28px;
+  border-top: 4px solid var(--navy-primary);
+  background: #ffffff;
+}
+
+.agentic-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1024px) {
+  .agentic-summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .agentic-summary-grid { grid-template-columns: 1fr; }
+}
+
+.agentic-stat-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.agentic-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.agentic-box-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #64748b;
+  letter-spacing: 0.5px;
+}
+
+.agentic-val-large {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--navy-primary);
+  margin-bottom: 6px;
+}
+
+.agentic-meta-row {
+  font-size: 0.78rem;
+  color: #475569;
+  display: flex;
+  justify-content: space-between;
+}
+
+.agentic-section-title {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1024px) {
+  .agents-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .agents-grid { grid-template-columns: 1fr; }
+}
+
+.agent-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: all 0.2s;
+}
+
+.agent-card:hover {
+  border-color: var(--navy-primary);
+  box-shadow: 0 4px 12px rgba(11, 60, 93, 0.08);
+}
+
+.agent-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.agent-icon {
+  font-size: 1.2rem;
+}
+
+.agent-name {
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: var(--navy-primary);
+}
+
+.agent-desc {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.45;
+}
+
+.react-log-wrap {
+  background: #0f172a;
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  border: 1px solid #1e293b;
+}
+
+.react-log-wrap .pipeline-title {
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+.react-log-box {
+  background: #020617;
+  color: #e2e8f0;
+  padding: 14px;
+  border-radius: 6px;
+  max-height: 280px;
+  overflow-y: auto;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.react-log-line {
+  color: #e2e8f0;
+}
+

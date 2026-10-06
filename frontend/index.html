@@ -418,6 +418,139 @@
         </div>
       </div>
 
+      <!-- Agentic AI Orchestrator & Autonomous Incident Investigation Section -->
+      <div class="card agentic-card" id="agentic-telemetry-card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">🤖 Agentic AI Orchestrator & Autonomous Investigation</h3>
+            <p class="card-subtitle">Fortinet (FortiNDR + FortiAI / FortiSOAR) Multi-Agent Security Workflow</p>
+          </div>
+          <span class="badge badge-lg badge-amber" id="agentic-status-badge">AWAITING INVESTIGATION</span>
+        </div>
+
+        <div class="card-body" style="padding: 20px;">
+          <!-- 4-Card Summary Grid -->
+          <div class="agentic-summary-grid">
+            <!-- Card 1: ML Classifier -->
+            <div class="agentic-stat-box">
+              <div class="agentic-box-header">
+                <span class="agentic-box-title">📊 ML THREAT CLASSIFIER</span>
+                <span class="badge badge-sm" id="ml-pred-badge">READY</span>
+              </div>
+              <div class="agentic-box-body">
+                <div class="agentic-val-large" id="ml-attack-category">Clean Traffic</div>
+                <div class="agentic-meta-row">
+                  <span>Confidence: <strong id="ml-confidence">0%</strong></span>
+                  <span>Entropy: <strong id="ml-entropy">0.0</strong></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Threat Intel & MITRE -->
+            <div class="agentic-stat-box">
+              <div class="agentic-box-header">
+                <span class="agentic-box-title">🛡️ THREAT INTEL & MITRE ATT&CK</span>
+                <span class="badge badge-sm badge-neutral" id="intel-ioc-badge">NO IOC</span>
+              </div>
+              <div class="agentic-box-body">
+                <div class="agentic-val-large" id="mitre-technique">T1071.001</div>
+                <div class="agentic-meta-row">
+                  <span id="mitre-tactic">Tactic: Command & Control</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Behavior Profiler -->
+            <div class="agentic-stat-box">
+              <div class="agentic-box-header">
+                <span class="agentic-box-title">🔍 ENDPOINT BEHAVIOR PROFILER</span>
+                <span class="badge badge-sm badge-neutral" id="behavior-anomaly-badge">BASELINE</span>
+              </div>
+              <div class="agentic-box-body">
+                <div class="agentic-val-large" id="behavior-score">0% Anomaly</div>
+                <div class="agentic-meta-row">
+                  <span id="behavior-role">Role: Corporate Endpoint</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: FortiSOAR Risk & Playbook -->
+            <div class="agentic-stat-box">
+              <div class="agentic-box-header">
+                <span class="agentic-box-title">🚀 FORTISOAR PLAYBOOK</span>
+                <span class="badge badge-sm badge-neutral" id="soar-risk-badge">LOW RISK</span>
+              </div>
+              <div class="agentic-box-body">
+                <div class="agentic-val-large" id="soar-playbook-id">SOAR-PB-MONITOR</div>
+                <div class="agentic-meta-row">
+                  <span id="soar-sim-status" style="color: #059669; font-weight:700;">Action: Passthrough</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Multi-Agent Cards Grid (6 Agents) -->
+          <h4 class="agentic-section-title">6 SPECIALIZED SECURITY AGENTS TELEMETRY</h4>
+          <div class="agents-grid">
+            <div class="agent-card">
+              <div class="agent-card-header">
+                <span class="agent-icon">🤖</span>
+                <span class="agent-name">Traffic Analysis Agent</span>
+              </div>
+              <p class="agent-desc" id="agent-obs-traffic">Awaiting packet telemetry to inspect L3-L7 headers, payload metrics, and byte rates.</p>
+            </div>
+
+            <div class="agent-card">
+              <div class="agent-card-header">
+                <span class="agent-icon">🛡️</span>
+                <span class="agent-name">Threat Intelligence Agent</span>
+              </div>
+              <p class="agent-desc" id="agent-obs-intel">Queries local IOC database, IP/SNI reputation feeds, and MITRE ATT&CK mappings.</p>
+            </div>
+
+            <div class="agent-card">
+              <div class="agent-card-header">
+                <span class="agent-icon">🔍</span>
+                <span class="agent-name">Behavior Analysis Agent</span>
+              </div>
+              <p class="agent-desc" id="agent-obs-behavior">Compares active session flow against host historical baseline & anomaly profile.</p>
+            </div>
+
+            <div class="agent-card">
+              <div class="agent-card-header">
+                <span class="agent-icon">🔬</span>
+                <span class="agent-name">Investigation Agent (ReAct)</span>
+              </div>
+              <p class="agent-desc" id="agent-obs-investigation">Synthesizes evidence from all agents into a unified threat hypothesis.</p>
+            </div>
+
+            <div class="agent-card">
+              <div class="agent-card-header">
+                <span class="agent-icon">⚖️</span>
+                <span class="agent-name">Risk Assessment Agent</span>
+              </div>
+              <p class="agent-desc" id="agent-obs-risk">Formulates weighted risk score using ML confidence, IOC severity, and anomaly score.</p>
+            </div>
+
+            <div class="agent-card">
+              <div class="agent-card-header">
+                <span class="agent-icon">🚀</span>
+                <span class="agent-name">Response Agent (FortiSOAR)</span>
+              </div>
+              <p class="agent-desc" id="agent-obs-response">Executes playbooks and simulates firewall rules and endpoint isolation.</p>
+            </div>
+          </div>
+
+          <!-- ReAct Autonomous Loop Execution Log -->
+          <div class="react-log-wrap">
+            <h4 class="pipeline-title">REACT AUTONOMOUS INVESTIGATION TRACE LOG (OBSERVE → REASON → ACT)</h4>
+            <div class="react-log-box font-mono" id="react-log-container">
+              <div class="react-log-line text-muted">[SYSTEM] Agentic Orchestrator initialized. Ready to autonomously investigate network events.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Telemetry Tables: Inspection History, Active Flows & Rules -->
       <div class="card tables-card">
         <div class="card-header border-b">

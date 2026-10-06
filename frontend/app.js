@@ -237,6 +237,116 @@ function showVerdictResult(verdict) {
   if (actionEl) {
     actionEl.textContent = verdict.decision === "ALLOW" ? "TRAFFIC PERMITTED" : "TRAFFIC DENIED";
   }
+
+  // Update Agentic AI Telemetry & Multi-Agent ReAct Log
+  updateAgenticTelemetry(verdict);
+}
+
+// ─────────────────────────────────────────────────────────────
+// Agentic AI Telemetry & Multi-Agent Investigation Renderer
+// ─────────────────────────────────────────────────────────────
+function updateAgenticTelemetry(verdict) {
+  const ag = verdict.agentic_soar;
+  if (!ag) return;
+
+  const ml = ag.ml_detection || {};
+  const agents = ag.agents || {};
+  const summary = ag.summary || {};
+
+  // Status Badge
+  const statusBadge = $("agentic-status-badge");
+  if (statusBadge) {
+    const isRisk = summary.risk_level === "HIGH" || summary.risk_level === "CRITICAL";
+    statusBadge.textContent = "INVESTIGATION COMPLETED (" + summary.risk_level + " RISK)";
+    statusBadge.className = "badge badge-lg " + (isRisk ? "badge-block" : "badge-allow");
+  }
+
+  // Card 1: ML Classifier
+  const mlCat = $("ml-attack-category");
+  if (mlCat) mlCat.textContent = ml.attack_category || "Clean Traffic";
+
+  const mlConf = $("ml-confidence");
+  if (mlConf) mlConf.textContent = Math.round((ml.confidence_score || 0) * 100) + "%";
+
+  const mlEnt = $("ml-entropy");
+  if (mlEnt) mlEnt.textContent = (ml.payload_entropy || 0.0).toFixed(2);
+
+  const mlBadge = $("ml-pred-badge");
+  if (mlBadge) {
+    mlBadge.textContent = ml.prediction || "NORMAL";
+    mlBadge.className = "badge badge-sm " + (ml.is_attack ? "badge-block" : "badge-allow");
+  }
+
+  // Card 2: Threat Intel & MITRE
+  const intelAgent = agents.threat_intel_agent || {};
+  const mitreTech = $("mitre-technique");
+  if (mitreTech) mitreTech.textContent = summary.mitre_technique || "T1071.001";
+
+  const mitreTac = $("mitre-tactic");
+  if (mitreTac && intelAgent.mitre_info) {
+    mitreTac.textContent = "Tactic: " + (intelAgent.mitre_info.tactic || "Command & Control");
+  }
+
+  const iocBadge = $("intel-ioc-badge");
+  if (iocBadge) {
+    iocBadge.textContent = intelAgent.is_ioc_matched ? "IOC MATCHED" : "NO IOC MATCH";
+    iocBadge.className = "badge badge-sm " + (intelAgent.is_ioc_matched ? "badge-block" : "badge-neutral");
+  }
+
+  // Card 3: Behavior Profiler
+  const behAgent = agents.behavior_agent || {};
+  const behScore = $("behavior-score");
+  if (behScore) behScore.textContent = Math.round((behAgent.anomaly_score || 0) * 100) + "% Anomaly";
+
+  const behRole = $("behavior-role");
+  if (behRole) behRole.textContent = "Role: " + (behAgent.device_role || "Corporate Endpoint");
+
+  const behBadge = $("behavior-anomaly-badge");
+  if (behBadge) {
+    behBadge.textContent = behAgent.has_anomaly ? "ANOMALY DETECTED" : "BASELINE NORMAL";
+    behBadge.className = "badge badge-sm " + (behAgent.has_anomaly ? "badge-amber" : "badge-allow");
+  }
+
+  // Card 4: SOAR Risk & Playbook
+  const riskAgent = agents.risk_agent || {};
+  const respAgent = agents.response_agent || {};
+
+  const pbId = $("soar-playbook-id");
+  if (pbId) pbId.textContent = summary.playbook_id || "SOAR-PB-MONITOR";
+
+  const simStat = $("soar-sim-status");
+  if (simStat) {
+    simStat.textContent = summary.response_status || "Passthrough";
+    simStat.style.color = (summary.risk_level === "HIGH" || summary.risk_level === "CRITICAL") ? "#dc2626" : "#059669";
+  }
+
+  const riskBadge = $("soar-risk-badge");
+  if (riskBadge) {
+    riskBadge.textContent = summary.risk_level + " RISK (" + Math.round((summary.risk_score || 0) * 100) + "%)";
+    riskBadge.className = "badge badge-sm " + ((summary.risk_level === "HIGH" || summary.risk_level === "CRITICAL") ? "badge-block" : (summary.risk_level === "MEDIUM" ? "badge-amber" : "badge-allow"));
+  }
+
+  // 6 Specialized Agent Descriptions
+  if (agents.traffic_agent) $("agent-obs-traffic").textContent = agents.traffic_agent.observation || "";
+  if (agents.threat_intel_agent) $("agent-obs-intel").textContent = agents.threat_intel_agent.observation || "";
+  if (agents.behavior_agent) $("agent-obs-behavior").textContent = agents.behavior_agent.observation || "";
+  if (agents.investigation_agent) $("agent-obs-investigation").textContent = agents.investigation_agent.hypothesis || "";
+  if (agents.risk_agent) $("agent-obs-risk").textContent = agents.risk_agent.justification || "";
+  if (agents.response_agent) $("agent-obs-response").textContent = (agents.response_agent.recommended_actions || []).join(" | ") || "";
+
+  // ReAct Autonomous Trace Log
+  const logContainer = $("react-log-container");
+  if (logContainer && agents.investigation_agent && agents.investigation_agent.react_steps) {
+    const steps = agents.investigation_agent.react_steps;
+    logContainer.innerHTML = steps.map(s => `
+      <div class="react-log-line" style="margin-bottom: 10px; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px;">
+        <span class="badge badge-sm badge-blue" style="font-weight:bold;">[STEP ${s.step} - ${s.phase}]</span>
+        <div style="margin-top:4px;"><strong>Thought:</strong> ${escHtml(s.thought)}</div>
+        <div><strong>Action:</strong> <span style="color:#0284c7;">${escHtml(s.action)}</span></div>
+        <div style="color:#059669;"><strong>Result:</strong> ${escHtml(s.result)}</div>
+      </div>
+    `).join("");
+  }
 }
 
 // ─────────────────────────────────────────────────────────────

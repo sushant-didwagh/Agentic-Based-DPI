@@ -24,9 +24,10 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, field_validator
 
-# Add parent directory so we can import dpi_engine from this file's location
+# Add parent directory so we can import dpi_engine and agentic_soar from this file's location
 sys.path.insert(0, os.path.dirname(__file__))
 from dpi_engine import engine, DPIVerdict
+from agentic_soar.orchestrator import orchestrator
 
 # =============================================================================
 # FastAPI Application
@@ -195,8 +196,17 @@ async def send_packet(req: PacketRequest):
     level = "[WARN]" if verdict.action == "BLOCK" else "[INFO]"
     print(f"{level} Verdict: {verdict.action} | {verdict.reason_code} | {verdict.reason}")
 
-    # Record in history
-    record_inspection(req, verdict)
+    # Run Agentic AI SOAR Orchestrator (Multi-Agent System & ReAct Loop)
+    pkt_dict = {
+        "source_ip": req.source_ip,
+        "source_port": req.source_port,
+        "destination_ip": req.destination_ip,
+        "destination_port": req.destination_port,
+        "protocol": req.protocol,
+        "sni": req.sni,
+        "payload": req.payload
+    }
+    agentic_res = orchestrator.process_packet(pkt_dict, verdict.details if isinstance(verdict.details, dict) else {})
 
     # Build response
     response = {
@@ -207,7 +217,8 @@ async def send_packet(req: PacketRequest):
         "details":             verdict.details,
         "inspection_time_ms":  verdict.inspection_time_ms,
         "timestamp":           datetime.now().isoformat(),
-        "engine":              "DPI-Gateway-v2.0",
+        "engine":              "DPI-Gateway-v2.0 (Fortinet-SOAR Agentic Engine)",
+        "agentic_soar":        agentic_res,
     }
 
     return JSONResponse(content=response, status_code=200)
